@@ -10,43 +10,32 @@ document.addEventListener('DOMContentLoaded', () => {
     q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
   });
 
-  // tray hotspots
-  const panel = document.getElementById('hotspot-panel');
-  const data = {
-    1: ['The Cup', 'Seven caffeine-free nighttime sachets — golden milk, chamomile and botanical blends. Every ritual begins with warmth.'],
-    2: ['The Air', 'Pillow & room mist with lavender and cedar, calibrated for night. Two sprays on the pillow, one in the air.'],
-    3: ['The Water', 'Single-soak mineral bath salt sachets. No bathtub? A warm foot soak counts.'],
-    4: ['The Close', 'Seven ritual cards — three small steps each — and a silk-feel sleep mask to end the evening.'],
-  };
-  document.querySelectorAll('.hotspot').forEach(h => {
-    h.addEventListener('click', () => {
-      document.querySelectorAll('.hotspot').forEach(x => x.classList.remove('active'));
-      h.classList.add('active');
+  // interactive tray hotspots — anchored pop-over on the circle
+  const wrap = document.querySelector('.tray-wrap');
+  if (wrap) {
+    const data = {
+      1: ['Step one', 'The Cup', 'step-cup.jpg', 'Seven caffeine-free nighttime blends — golden milk, chamomile and botanicals. Every ritual begins with warmth.'],
+      2: ['Step two', 'The Air', 'step-air.jpg', 'Pillow & room mist of lavender and cedar, calibrated for night. Two sprays on the pillow, one in the air.'],
+      3: ['Step three', 'The Water', 'step-water.jpg', 'Single-soak mineral bath salts. No bathtub? A warm foot soak counts — every card has a no-tub version.'],
+      4: ['Step four', 'The Close', 'step-close.jpg', 'Seven ritual cards — three small steps each — plus a silk-feel sleep mask to end the evening.'],
+    };
+    const pop = document.createElement('div');
+    pop.className = 'hotspot-popover';
+    wrap.appendChild(pop);
+    const arrow = document.createElement('span');
+    arrow.className = 'hp-arrow';
+
+    const hide = () => { pop.classList.remove('show'); document.querySelectorAll('.hotspot').forEach(x => x.classList.remove('active')); };
+
+    const show = (h) => {
       const d = data[h.dataset.n];
-      if (panel && d) panel.innerHTML = `<h4>${d[0]}</h4><p>${d[1]}</p>`;
-    });
-  });
-
-  // buy panel option toggles
-  document.querySelectorAll('.option-toggle').forEach(group => {
-    group.querySelectorAll('.option').forEach(o => {
-      o.addEventListener('click', () => {
-        group.querySelectorAll('.option').forEach(x => x.classList.remove('selected'));
-        o.classList.add('selected');
-        const priceEl = document.getElementById(group.dataset.price || '');
-        if (priceEl && o.dataset.price) priceEl.innerHTML = o.dataset.price;
-      });
-    });
-  });
-
-  // graceful image fallback
-  document.querySelectorAll('img[data-fallback]').forEach(img => {
-    img.addEventListener('error', () => {
-      const d = document.createElement('div');
-      d.className = 'img-fallback';
-      d.style.minHeight = (img.dataset.h || 280) + 'px';
-      d.textContent = img.alt || 'Better Noum';
-      img.replaceWith(d);
-    });
-  });
-});
+      if (!d) return;
+      document.querySelectorAll('.hotspot').forEach(x => x.classList.remove('active', 'pulse'));
+      h.classList.add('active');
+      pop.innerHTML = `<button class="hp-close" aria-label="Close">&times;</button>
+        <img src="${d[2]}" alt="${d[1]}" onerror="this.style.display='none'">
+        <div class="hp-body"><span class="hp-step">${d[0]}</span><h4>${d[1]}</h4><p>${d[3]}</p></div>`;
+      pop.appendChild(arrow);
+      // position relative to wrap
+      const wr = wrap.getBoundingClientRect();
+      const hr = h.getBoundingClient
