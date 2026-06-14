@@ -29,31 +29,44 @@
   <div class="container grid-2" style="align-items:start">
     <div>
       <img class="photo" src="her-box.jpg" alt="The Her Box, open at night" data-fallback data-h="400">
-      <div class="grid-3 mt-2" style="gap:14px">
-        <img class="photo" src="candle.jpg" alt="Scented candle" data-fallback data-h="110">
-        <img class="photo" src="journal.jpg" alt="Gratitude journal" data-fallback data-h="110">
-        <img class="photo" src="step-water.jpg" alt="Bath soak" data-fallback data-h="110">
+      <div class="gallery-thumbs">
+        <img class="photo" src="candle.jpg" alt="Scented candle" data-fallback data-h="120">
+        <img class="photo" src="journal.jpg" alt="Gratitude journal" data-fallback data-h="120">
+        <img class="photo" src="step-water.jpg" alt="Bath soak" data-fallback data-h="120">
       </div>
     </div>
     <div class="buy-panel">
       <span class="eyebrow">For her</span>
       <h1 style="font-size:2.4rem">The Her Box</h1>
-      <p class="mt-2">A serene, meditation-led ritual — the most diverse box we make. Permission to slow the whole evening down.</p>
-      <div class="option-toggle" data-price="her-price">
-        <div class="option selected" data-price="AED 489 <small>one-time</small>">
-          <div class="o-title">The Box</div>
-          <div class="o-sub">Keepsake box + full ritual</div>
+      <p class="mt-2">A serene, meditation-led ritual — the most diverse box we make. Permission to slow the whole evening down. Choose the size that fits.</p>
+      <div class="option-toggle" data-price="her-price" data-feats="her-feats">
+        <div class="option" data-price="AED 389 <small>one-time</small>" data-feats="<li>Keepsake box, built to stay</li><li>Lavender-cedar scented candle</li><li>Calming teas and a single-soak bath salt</li><li>Silk eye pillow</li><li>Seven meditation cards</li>">
+          <div class="o-title">Essential</div>
+          <div class="o-sub">AED 389</div>
         </div>
-        <div class="option" data-price="AED 539 <small>one-time</small>">
-          <div class="o-title">Gift Edition</div>
-          <div class="o-sub">+ sleeve, card, no prices</div>
+        <div class="option selected" data-price="AED 489 <small>one-time</small>" data-feats="<li>Everything in Essential</li><li>Cloth-bound gratitude journal</li><li>Evening supplement</li><li>Meditation playlist (QR card)</li>">
+          <div class="o-title">Signature</div>
+          <div class="o-sub">AED 489</div>
+        </div>
+        <div class="option" data-price="AED 649 <small>one-time</small>" data-feats="<li>Everything in Signature</li><li>Deluxe double-burn candle</li><li>Premium silk eye-pillow set</li><li>First monthly refill tray included</li><li>Gift-wrapped sleeve and card</li>">
+          <div class="o-title">Luxe</div>
+          <div class="o-sub">AED 649</div>
         </div>
       </div>
       <div class="price" id="her-price">AED 489 <small>one-time</small></div>
-      <label style="display:flex;gap:10px;align-items:flex-start;margin:18px 0;font-size:.92rem;cursor:pointer">
-        <input type="checkbox" style="margin-top:4px;accent-color:#C28E5C">
+      <ul class="tier-feats" id="her-feats"><li>Everything in Essential</li><li>Cloth-bound gratitude journal</li><li>Evening supplement</li><li>Meditation playlist (QR card)</li></ul>
+      <label class="addon-check">
+        <input type="checkbox">
         <span>Add monthly refills and save 15% — <strong>AED 239/mo</strong>, pause anytime</span>
       </label>
+      <label class="addon-check">
+        <input type="checkbox" class="msg-toggle">
+        <span>Add a gift message card — <strong>free</strong></span>
+      </label>
+      <div class="msg-field" hidden>
+        <textarea class="msg-text" maxlength="200" rows="3" placeholder="Write your note — we will hand-letter it on a card (up to 200 characters)."></textarea>
+        <span class="msg-count">0 / 200</span>
+      </div>
       <a class="btn btn-primary" style="width:100%;text-align:center" href="#">Start the Ritual</a>
       <div class="trust-row">
         <span>Free UAE delivery</span><span>Cash on delivery</span><span>Tabby / Tamara</span><span>Pause anytime</span>
@@ -62,19 +75,22 @@
   </div>
 </section>
 
-<!-- WHAT'S INSIDE -->
+<!-- INSIDE · interactive tray -->
 <section class="band-cream">
-  <div class="container">
-    <div class="center"><span class="eyebrow">Inside the Her Box</span><h2>A fuller, softer ritual.</h2></div>
-    <div class="grid-3 mt-4">
-      <div class="card"><h3>Scented candle</h3><p class="mt-2">A soft lavender-cedar candle to open the evening and settle the room.</p></div>
-      <div class="card"><h3>Silk eye pillow</h3><p class="mt-2">A gently weighted, lavender-scented eye pillow — rest it over the eyes and exhale.</p></div>
-      <div class="card"><h3>Meditation cards</h3><p class="mt-2">Seven short guided meditations and breathwork prompts — no app, no screen, just a card and a breath.</p></div>
-      <div class="card"><h3>Calming teas &amp; soak</h3><p class="mt-2">Caffeine-free herbal blends and a single-soak bath salt for the warm-water step.</p></div>
-      <div class="card"><h3>Gratitude journal</h3><p class="mt-2">A cloth-bound journal with three nightly prompts — close the day with something kind.</p></div>
-      <div class="card"><h3>Evening supplement</h3><p class="mt-2">An all-in-one capsule with magnesium, GABA &amp; 5-HTP to support a calming evening routine.<sup>*</sup></p></div>
+  <div class="container center">
+    <span class="eyebrow">Inside the Her Box</span>
+    <h2>Tap the tray. Meet the evening.</h2>
+    <div class="tray-wrap">
+      <img class="photo" src="her-box.jpg" alt="The Her Box, open" data-fallback data-h="460">
+      <button class="hotspot" style="top:51%;left:31%" data-step="Element one" data-title="Scented candle" data-img="candle.jpg" data-text="A soft lavender-cedar candle to open the evening and settle the room.">1</button>
+      <button class="hotspot" style="top:40%;left:47%" data-step="Element two" data-title="Silk eye pillow" data-img="step-close.jpg" data-text="A gently weighted, lavender-scented eye pillow — rest it over the eyes and exhale.">2</button>
+      <button class="hotspot" style="top:47%;left:70%" data-step="Element three" data-title="Meditation cards" data-text="Seven short guided meditations and breathwork prompts — no app, no screen, just a card and a breath.">3</button>
+      <button class="hotspot" style="top:60%;left:50%" data-step="Element four" data-title="Calming teas and soak" data-img="step-cup.jpg" data-text="Caffeine-free herbal blends and a single-soak bath salt for the warm-water step.">4</button>
+      <button class="hotspot" style="top:63%;left:71%" data-step="Element five" data-title="Gratitude journal" data-img="journal.jpg" data-text="A cloth-bound journal with three nightly prompts — close the day with something kind.">5</button>
+      <button class="hotspot" style="top:50%;left:80%" data-step="Element six" data-title="Evening supplement" data-img="supplement.jpg" data-text="An all-in-one capsule with magnesium, GABA and 5-HTP to support a calming evening routine.">6</button>
     </div>
-    <p class="note mt-4"><sup>*</sup> Supports a calming evening routine. Not intended to diagnose, treat, cure or prevent any disease. Availability subject to UAE regulatory review.</p>
+    <p class="hotspot-hint">Tap a glowing number to see what each compartment holds.</p>
+    <p class="note mt-2"><sup>*</sup> The evening supplement supports a calming routine. Not intended to diagnose, treat, cure or prevent any disease. Availability subject to UAE regulatory review.</p>
   </div>
 </section>
 
@@ -101,7 +117,7 @@
     <h2>Light. Breathe. Soak. Rest.</h2>
     <div class="hairline center"></div>
     <p>Light the candle, draw a card and breathe, sink into the soak, write one line of gratitude, eye pillow on, playlist low. A complete, unhurried evening — designed to be felt, not rushed.</p>
-    <a class="btn btn-light mt-3" href="#buy">Start the Ritual — AED 489</a>
+    <a class="btn btn-light mt-3" href="#buy">Start the Ritual — from AED 389</a>
   </div>
 </section>
 

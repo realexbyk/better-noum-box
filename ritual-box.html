@@ -30,7 +30,7 @@
   <div class="container grid-2" style="align-items:start">
     <div>
       <img class="photo" src="hero.jpg" alt="The Ritual Box open on a bed" data-fallback data-h="380">
-      <div class="grid-3 mt-2" style="gap:14px">
+      <div class="gallery-thumbs">
         <img class="photo" src="tray-topdown.jpg" alt="Tray top-down" data-fallback data-h="120">
         <img class="photo" src="step-close.jpg" alt="Ritual card and sleep mask" data-fallback data-h="120">
         <img class="photo" src="refill-tray.jpg" alt="Refill tray" data-fallback data-h="120">
@@ -51,10 +51,18 @@
         </div>
       </div>
       <div class="price" id="box-price">AED 399 <small>one-time</small></div>
-      <label style="display:flex;gap:10px;align-items:flex-start;margin:18px 0;font-size:.92rem;cursor:pointer">
-        <input type="checkbox" style="margin-top:4px;accent-color:#C28E5C">
+      <label class="addon-check">
+        <input type="checkbox">
         <span>Add the Monthly Ritual Tray and save 15% — <strong>AED 199/mo</strong>, pause anytime</span>
       </label>
+      <label class="addon-check">
+        <input type="checkbox" class="msg-toggle">
+        <span>Add a gift message card — <strong>free</strong></span>
+      </label>
+      <div class="msg-field" hidden>
+        <textarea class="msg-text" maxlength="200" rows="3" placeholder="Write your note — we will hand-letter it on a card (up to 200 characters)."></textarea>
+        <span class="msg-count">0 / 200</span>
+      </div>
       <a class="btn btn-primary" style="width:100%;text-align:center" href="#">Start Your Ritual</a>
       <div class="trust-row">
         <span>Free UAE delivery, 1–2 days</span>
@@ -115,10 +123,10 @@
     <h2>Tap the tray. Meet the evening.</h2>
     <div class="tray-wrap">
       <img class="photo" src="tray-topdown.jpg" alt="Annotated tray" data-fallback data-h="500">
-      <button class="hotspot" style="top:38%;left:16%" data-n="1">1</button>
-      <button class="hotspot" style="top:45%;left:44%" data-n="2">2</button>
-      <button class="hotspot" style="top:68%;left:72%" data-n="3">3</button>
-      <button class="hotspot" style="top:24%;left:68%" data-n="4">4</button>
+      <button class="hotspot" style="top:38%;left:16%" data-step="Step one" data-title="The Cup" data-img="step-cup.jpg" data-text="Seven caffeine-free nighttime blends — golden milk, chamomile and botanicals. Every ritual begins with warmth.">1</button>
+      <button class="hotspot" style="top:45%;left:44%" data-step="Step two" data-title="The Air" data-img="step-air.jpg" data-text="Pillow and room mist of lavender and cedar, calibrated for night. Two sprays on the pillow, one in the air.">2</button>
+      <button class="hotspot" style="top:68%;left:72%" data-step="Step three" data-title="The Water" data-img="step-water.jpg" data-text="Single-soak mineral bath salts. No bathtub? A warm foot soak counts — every card has a no-tub version.">3</button>
+      <button class="hotspot" style="top:24%;left:68%" data-step="Step four" data-title="The Close" data-img="step-close.jpg" data-text="Seven ritual cards — three small steps each — plus a silk-feel sleep mask to end the evening.">4</button>
     </div>
     <p class="hotspot-hint">Tap a glowing number on the tray to see what each compartment holds.</p>
   </div>

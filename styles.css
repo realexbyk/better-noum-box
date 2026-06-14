@@ -160,4 +160,56 @@ header{
 
 /* footer */
 footer{background:var(--cocoa-deep);color:#cdbda9;padding:70px 0 36px}
-footer h4{font-family:'Inter';font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);m
+footer h4{font-family:'Inter';font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:18px}
+footer ul{list-style:none}
+footer li{margin-bottom:10px}
+footer a{color:#cdbda9;text-decoration:none;font-size:.92rem}
+footer a:hover{color:var(--cream)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-brand .logo{color:var(--cream);font-size:1.6rem}
+.footer-brand p{color:#a8937a;font-size:.9rem;max-width:280px;margin-top:14px}
+.footer-bottom{border-top:1px solid rgba(205,189,169,.18);padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem;color:#8d7a64}
+.ar-mark{font-family:'Noto Naskh Arabic',serif;font-size:1.3rem;color:var(--bronze)}
+
+/* page hero (inner pages) */
+.page-hero{padding:84px 0 56px;text-align:center}
+.page-hero p.lead{max-width:640px;margin:22px auto 0;font-size:1.1rem}
+
+/* CTA banner */
+.cta-banner{text-align:center;padding:96px 28px}
+.cta-banner h2{margin-bottom:18px}
+.cta-banner p{max-width:520px;margin:0 auto 34px}
+
+/* utility */
+.center{text-align:center}
+.mt-2{margin-top:18px}.mt-3{margin-top:30px}.mt-4{margin-top:48px}
+.note{font-size:.8rem;color:var(--taupe);font-style:italic}
+.img-fallback{background:linear-gradient(135deg,var(--beige),var(--taupe));min-height:280px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic}
+
+@media(max-width:900px){
+  .grid-2,.grid-3,.grid-4,.price-cards,.footer-grid{grid-template-columns:1fr}
+  .grid-2{gap:36px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;padding:28px;gap:20px;box-shadow:var(--shadow)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  section{padding:60px 0}
+  .hero{min-height:74vh}
+}
+
+/* === gallery thumbnail alignment === */
+.gallery-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.gallery-thumbs .photo{height:120px;width:100%;object-fit:cover;margin:0}
+
+/* === buy-panel tier feature list === */
+.tier-feats{list-style:none;margin:16px 0 4px;padding:0}
+.tier-feats li{padding:7px 0;border-bottom:1px solid var(--beige);font-size:.9rem;color:#6b5743}
+.tier-feats li::before{content:"\2713";color:var(--bronze);font-weight:700;margin-right:10px}
+.option-toggle .o-sub{font-weight:600;color:var(--cocoa-deep)}
+
+/* === gift message card add-on === */
+.addon-check{display:flex;gap:10px;align-items:flex-start;margin:14px 0;font-size:.92rem;cursor:pointer;color:#6b5743}
+.addon-check input{margin-top:4px;accent-color:var(--caramel);flex:none}
+.msg-field{margin:2px 0 16px}
+.msg-text{width:100%;border:1.5px solid var(--beige);border-radius:12px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--cocoa);resize:vertical;background:#fff;line-height:1.5}
+.msg-text:focus{outline:none;border-color:var(--caramel)}
+.msg-count{display:block;text-align:right;font-size:.72rem;color:var(--taupe);margin-top:4px}

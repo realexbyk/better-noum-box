@@ -29,31 +29,44 @@
   <div class="container grid-2" style="align-items:start">
     <div>
       <img class="photo" src="him-box.jpg" alt="The Him Box, open on an oak table at night" data-fallback data-h="400">
-      <div class="grid-3 mt-2" style="gap:14px">
-        <img class="photo" src="candle.jpg" alt="Cedar-amber candle" data-fallback data-h="110">
-        <img class="photo" src="journal.jpg" alt="Leather night journal" data-fallback data-h="110">
-        <img class="photo" src="supplement.jpg" alt="Evening supplement" data-fallback data-h="110">
+      <div class="gallery-thumbs">
+        <img class="photo" src="candle.jpg" alt="Cedar-amber candle" data-fallback data-h="120">
+        <img class="photo" src="journal.jpg" alt="Leather night journal" data-fallback data-h="120">
+        <img class="photo" src="supplement.jpg" alt="Evening supplement" data-fallback data-h="120">
       </div>
     </div>
     <div class="buy-panel">
       <span class="eyebrow">For him</span>
       <h1 style="font-size:2.4rem">The Him Box</h1>
-      <p class="mt-2">A deeper, grounding wind-down — built for the man who runs at full speed until midnight. Everything to power down, in order.</p>
-      <div class="option-toggle" data-price="him-price">
-        <div class="option selected" data-price="AED 469 <small>one-time</small>">
-          <div class="o-title">The Box</div>
-          <div class="o-sub">Keepsake box + full ritual</div>
+      <p class="mt-2">A deeper, grounding wind-down — built for the man who runs at full speed until midnight. Everything to power down, in order. Choose the size that fits.</p>
+      <div class="option-toggle" data-price="him-price" data-feats="him-feats">
+        <div class="option" data-price="AED 369 <small>one-time</small>" data-feats="<li>Keepsake box, built to stay</li><li>Cedar-amber candle</li><li>Sleep drink and capsules</li><li>Matte sleep mask</li><li>Seven ritual cards</li>">
+          <div class="o-title">Essential</div>
+          <div class="o-sub">AED 369</div>
         </div>
-        <div class="option" data-price="AED 519 <small>one-time</small>">
-          <div class="o-title">Gift Edition</div>
-          <div class="o-sub">+ sleeve, card, no prices</div>
+        <div class="option selected" data-price="AED 469 <small>one-time</small>" data-feats="<li>Everything in Essential</li><li>All-in-one evening supplement</li><li>Leather night journal</li><li>Wind-down playlist (QR card)</li>">
+          <div class="o-title">Signature</div>
+          <div class="o-sub">AED 469</div>
+        </div>
+        <div class="option" data-price="AED 619 <small>one-time</small>" data-feats="<li>Everything in Signature</li><li>Deluxe cedar-amber candle</li><li>Full-grain leather journal upgrade</li><li>First monthly refill tray included</li><li>Gift-wrapped sleeve and card</li>">
+          <div class="o-title">Luxe</div>
+          <div class="o-sub">AED 619</div>
         </div>
       </div>
       <div class="price" id="him-price">AED 469 <small>one-time</small></div>
-      <label style="display:flex;gap:10px;align-items:flex-start;margin:18px 0;font-size:.92rem;cursor:pointer">
-        <input type="checkbox" style="margin-top:4px;accent-color:#C28E5C">
+      <ul class="tier-feats" id="him-feats"><li>Everything in Essential</li><li>All-in-one evening supplement</li><li>Leather night journal</li><li>Wind-down playlist (QR card)</li></ul>
+      <label class="addon-check">
+        <input type="checkbox">
         <span>Add monthly refills and save 15% — <strong>AED 229/mo</strong>, pause anytime</span>
       </label>
+      <label class="addon-check">
+        <input type="checkbox" class="msg-toggle">
+        <span>Add a gift message card — <strong>free</strong></span>
+      </label>
+      <div class="msg-field" hidden>
+        <textarea class="msg-text" maxlength="200" rows="3" placeholder="Write your note — we will hand-letter it on a card (up to 200 characters)."></textarea>
+        <span class="msg-count">0 / 200</span>
+      </div>
       <a class="btn btn-primary" style="width:100%;text-align:center" href="#">Start the Ritual</a>
       <div class="trust-row">
         <span>Free UAE delivery</span><span>Cash on delivery</span><span>Tabby / Tamara</span><span>Pause anytime</span>
@@ -62,19 +75,22 @@
   </div>
 </section>
 
-<!-- WHAT'S INSIDE -->
+<!-- INSIDE · interactive tray -->
 <section class="band-cream">
-  <div class="container">
-    <div class="center"><span class="eyebrow">Inside the Him Box</span><h2>Six ways to power down.</h2></div>
-    <div class="grid-3 mt-4">
-      <div class="card"><h3>Cedar-amber candle</h3><p class="mt-2">A warm, woody scent to mark the end of the day. Light it first — the signal that work is over.</p></div>
-      <div class="card"><h3>Sleep drink &amp; capsules</h3><p class="mt-2">Our caffeine-free nighttime blend plus easy sleep capsules — the same calming heart in every box.</p></div>
-      <div class="card"><h3>Evening supplement</h3><p class="mt-2">One all-in-one capsule with magnesium, GABA &amp; 5-HTP, formulated to support a calming evening routine.<sup>*</sup></p></div>
-      <div class="card"><h3>Leather night journal</h3><p class="mt-2">Three lines a night — close the open loops so your head hits the pillow quieter.</p></div>
-      <div class="card"><h3>Wind-down playlist</h3><p class="mt-2">Scan the card for a low, unhurried Better Noum playlist — sound to power down to.</p></div>
-      <div class="card"><h3>Sleep mask &amp; ritual cards</h3><p class="mt-2">A matte sleep mask and seven cards that script the routine until it runs itself.</p></div>
+  <div class="container center">
+    <span class="eyebrow">Inside the Him Box</span>
+    <h2>Tap the tray. Meet the evening.</h2>
+    <div class="tray-wrap">
+      <img class="photo" src="him-box.jpg" alt="The Him Box, open" data-fallback data-h="460">
+      <button class="hotspot" style="top:43%;left:47%" data-step="Element one" data-title="Cedar-amber candle" data-img="candle.jpg" data-text="A warm, woody scent to mark the end of the day. Light it first — the signal that work is over.">1</button>
+      <button class="hotspot" style="top:62%;left:44%" data-step="Element two" data-title="Sleep drink and capsules" data-img="step-cup.jpg" data-text="Our caffeine-free nighttime blend plus easy sleep capsules — the same calming heart in every box.">2</button>
+      <button class="hotspot" style="top:49%;left:53%" data-step="Element three" data-title="Evening supplement" data-img="supplement.jpg" data-text="One all-in-one capsule with magnesium, GABA and 5-HTP, formulated to support a calming evening routine.">3</button>
+      <button class="hotspot" style="top:54%;left:63%" data-step="Element four" data-title="Leather night journal" data-img="journal.jpg" data-text="Three lines a night — close the open loops so your head hits the pillow quieter.">4</button>
+      <button class="hotspot" style="top:66%;left:62%" data-step="Element five" data-title="Wind-down playlist" data-img="spotify-qr.png" data-text="Scan the card for a low, unhurried Better Noum playlist — sound to power down to.">5</button>
+      <button class="hotspot" style="top:42%;left:67%" data-step="Element six" data-title="Sleep mask and ritual cards" data-img="step-close.jpg" data-text="A matte sleep mask and seven cards that script the routine until it runs itself.">6</button>
     </div>
-    <p class="note mt-4"><sup>*</sup> Supports a calming evening routine. Not intended to diagnose, treat, cure or prevent any disease. Availability subject to UAE regulatory review.</p>
+    <p class="hotspot-hint">Tap a glowing number to see what each compartment holds.</p>
+    <p class="note mt-2"><sup>*</sup> The evening supplement supports a calming routine. Not intended to diagnose, treat, cure or prevent any disease. Availability subject to UAE regulatory review.</p>
   </div>
 </section>
 
@@ -101,7 +117,7 @@
     <h2>Light. Brew. Write. Rest.</h2>
     <div class="hairline center"></div>
     <p>Light the candle, brew the drink, take the supplement, write three lines, press play, lights low. Four small steps, thirty quiet minutes — repeated until your body reads them as the signal for sleep.</p>
-    <a class="btn btn-light mt-3" href="#buy">Start the Ritual — AED 469</a>
+    <a class="btn btn-light mt-3" href="#buy">Start the Ritual — from AED 369</a>
   </div>
 </section>
 
